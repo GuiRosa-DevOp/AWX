@@ -1,0 +1,20 @@
+---
+- name: Executar script .sh e retornar sucesso
+  hosts: localhost
+  tasks:
+    - name: Executar script
+      command: /home/guilherme/Treino/Ansible_teste/meu_script.sh
+      register: script_output
+      ignore_errors: true
+
+    - name: Verificar saída do script
+      debug:
+        var: script_output
+      when: script_output is failed
+      failed_when: false
+      changed_when: false
+
+    - name: Exibir mensagem de sucesso
+      debug:
+        msg: "Script executado com sucesso."
+      when: script_output is success
