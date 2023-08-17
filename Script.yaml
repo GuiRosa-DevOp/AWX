@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
     - name: Executar script
-      command: /home/ec2-user/scripts
+      command: /home/ec2-user/scripts/meu_script.sh
       register: script_output
       ignore_errors: true
 
