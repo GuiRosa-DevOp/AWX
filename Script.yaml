@@ -3,7 +3,7 @@
   hosts: localhost
   tasks:
     - name: Executar script
-      command: /home/guilherme/Treino/Ansible_teste/meu_script.sh
+      command: /home/ec2-user/scripts
       register: script_output
       ignore_errors: true
 
